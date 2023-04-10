@@ -3,6 +3,8 @@ Bu proje, Trendyol'da yer alan bir ürünün URL'si ve kullanıcının istediği
 
 Projeyi kullanmak için, öncelikle OpenAI API anahtarına ihtiyacınız olacaktır. Anahtarı almak için OpenAI web sitesine kaydolmanız gerekmektedir. Daha sonra, projeyi GitHub'dan indirip çalıştırabilirsiniz. Kullanıcı arayüzü basittir. URL ve yorum sayısı gibi gerekli bilgileri girmeniz yeterlidir. Sonuçlar bir Excel dosyasına yazdırılacaktır ve bu dosya kullanıcı tarafından incelenebilir.
 
+[Programın çıktısına göz atmak için tıklayınız.](https://prnt.sc/15Rh4XA_infS)
+
 ## Kurulum Adımları ve Gereksinimler
 
 Python 3
