@@ -13,7 +13,7 @@ pip
 
 ```
 git clone https://github.com/Spyzah/Comments-Semantic-Analysis.git
-cd CommentsSemanticAnalysis
+cd Comments-Semantic-Analysis
 pip install -r requirements.txt
 python TrendyolSemanticAnalysis.py
 ```
