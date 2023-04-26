@@ -74,6 +74,8 @@ try:
     ws.column_dimensions['A'].width = 100
     ws.column_dimensions['B'].width = 20
     book.save(excel_comp)
+
     print("\nBaşarıyla excel'e aktarıldı")
 except:
+    
     print("Girdiğiniz OpenAI API Key veya Ürün Url'si hatalı girilmiştir.")
