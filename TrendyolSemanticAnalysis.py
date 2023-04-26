@@ -7,6 +7,7 @@ import pandas as pd
 try:
     openaiKey = input("OpenAI API Key Giriniz: ")
     url = input("URL: ")
+    excel_name = input("Excel dosya ismi giriniz: ")
 
     print('Tüm yorumları çekmek için 0 bas')
     Range = int(input("Kaç yorum çekmek istiyorsun: "))
@@ -62,16 +63,17 @@ try:
     for index, comment in enumerate(comments):
         sentiment = analyzeSentiment(comment, index)
 
+    excel_comp = excel_name + ".xlsx"
+
     df = pd.DataFrame({'Yorumlar': comments, 'Duygu Analizi': sentiments})
-    with pd.ExcelWriter('yorumlar.xlsx') as writer:
+    with pd.ExcelWriter(excel_comp) as writer:
         df.to_excel(writer, sheet_name='yorumlar', index=False)
 
-
-    book = load_workbook('yorumlar.xlsx')
+    book = load_workbook(excel_comp)
     ws = book['yorumlar']
     ws.column_dimensions['A'].width = 100
     ws.column_dimensions['B'].width = 20
-    book.save('yorumlar.xlsx')
+    book.save(excel_comp)
     print("\nBaşarıyla excel'e aktarıldı")
 except:
     print("Girdiğiniz OpenAI API Key veya Ürün Url'si hatalı girilmiştir.")
