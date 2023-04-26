@@ -1,7 +1,7 @@
 # Proje Hakkında Bilgi
 Bu proje, Trendyol'da yer alan bir ürünün URL'si ve kullanıcının istediği yorum sayısı girilerek, OpenAI API'si kullanılarak yorumların duygu analizinin yapıldığı bir Python programıdır. Bu program, kullanıcının istediği sayıda yorumu çeker ve her yorumun pozitif, negatif veya nötr olup olmadığını belirler. Sonuçlar bir Excel dosyasına yazdırılır ve bu dosya kolayca incelenebilir. Bu proje, kullanıcılara Trendyol'da bir ürün hakkında daha fazla bilgi edinme imkanı sunar ve bir ürünün popülerliği hakkında fikir edinmelerine yardımcı olabilir.
 
-Projeyi kullanmak için, öncelikle OpenAI API anahtarına ihtiyacınız olacaktır. Anahtarı almak için OpenAI web sitesine kaydolmanız gerekmektedir. Daha sonra, projeyi GitHub'dan indirip çalıştırabilirsiniz. Kullanıcı arayüzü basittir. URL ve yorum sayısı gibi gerekli bilgileri girmeniz yeterlidir. Sonuçlar bir Excel dosyasına yazdırılacaktır ve bu dosya kullanıcı tarafından incelenebilir.
+Projeyi kullanmak için, öncelikle OpenAI API anahtarına ihtiyacınız olacaktır. Anahtarı almak için OpenAI web sitesine kaydolmanız gerekmektedir. Daha sonra, projeyi GitHub'dan indirip çalıştırabilirsiniz. Kullanıcı arayüzü basittir. URL ve yorum sayısı gibi gerekli bilgileri girmeniz yeterlidir. Sonuçlar bir Excel dosyasına yazdırılacaktır.
 
 [Programın çıktısına göz atmak için tıklayınız.](https://prnt.sc/15Rh4XA_infS)
 
