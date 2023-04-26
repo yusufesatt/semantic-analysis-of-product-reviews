@@ -14,8 +14,8 @@ pip
 ## Programı İndirip Çalıştırma 
 
 ```
-git clone https://github.com/Spyzah/Comments-Semantic-Analysis.git
-cd Comments-Semantic-Analysis
+git clone https://github.com/Spyzah/semantic-analysis-of-product-comments.git
+cd CommentsSemanticAnalysis
 pip install -r requirements.txt
 python TrendyolSemanticAnalysis.py
 ```
