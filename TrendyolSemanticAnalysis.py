@@ -49,7 +49,7 @@ try:
     def analyzeSentiment(analyzer, index):
         completion = openai.Completion.create(
             engine="text-davinci-002",
-            prompt=f"[{index + 1}/{len(comments)}]bu yorumların duygu analizini yap ve sonucunu yani pozitif mi, negatif mi, nötr mü oldugunu yaz.\n{comment}\nDuygu Analizi:",
+            prompt=f"[{index + 1}/{len(comments)}]Yorumları duygu analizine tabi tut ve her bir yorumun duygusunu tek bir kelimeyle belirt ve baş harfini büyük olacak şekilde yaz: 'Pozitif', Negatif' veya 'Nötr'.\n{comment}\nDuygu Analizi:",
             max_tokens=60,
             n=1,
             stop=None,
