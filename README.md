@@ -1,35 +1,16 @@
-# Proje Hakkında Bilgi
-Bu proje, Trendyol'da yer alan bir ürünün URL'si ve kullanıcının istediği yorum sayısı girilerek, OpenAI API'si kullanılarak yorumların duygu analizinin yapıldığı bir Python programıdır. Bu program, kullanıcının istediği sayıda yorumu çeker ve her yorumun pozitif, negatif veya nötr olup olmadığını belirler. Sonuçlar bir Excel dosyasına yazdırılır ve bu dosya kolayca incelenebilir. Bu proje, kullanıcılara Trendyol'da bir ürün hakkında daha fazla bilgi edinme imkanı sunar ve bir ürünün popülerliği hakkında fikir edinmelerine yardımcı olabilir.
+# Sentiment analysis of reviews of a product on Trendyol.
+<hr>
+This project performs sentiment analysis of comments using the OpenAI API by entering the URL of a product on Trendyol and the number of comments the user wants. It pulls the number of comments the user wants and determines whether each comment is positive, negative or neutral. The results are printed to an Excel file.
 
-Projeyi kullanmak için, öncelikle OpenAI API anahtarına ihtiyacınız olacaktır. Anahtarı almak için OpenAI web sitesine kaydolmanız gerekmektedir. Daha sonra, projeyi GitHub'dan indirip çalıştırabilirsiniz. Kullanıcı arayüzü basittir. URL ve yorum sayısı gibi gerekli bilgileri girmeniz yeterlidir. Sonuçlar bir Excel dosyasına yazdırılacaktır.
+To use the project, you will first need an OpenAI API key. To get the key, you need to register on the OpenAI website. Afterwards, you can clone the project from GitHub and run it.
 
-[Programın çıktısına göz atmak için tıklayınız.](https://prnt.sc/15Rh4XA_infS)
+[Click here to see the sample output.](https://prnt.sc/15Rh4XA_infS)
 
-## Kurulum Adımları ve Gereksinimler
-
-Python 3
-
-pip
-
-## Programı İndirip Çalıştırma 
+## Installation and Usage
 
 ```
 git clone https://github.com/Spyzah/semantic-analysis-of-product-reviews.git
-cd CommentsSemanticAnalysis
+cd semantic-analysis-of-product-reviews
 pip install -r requirements.txt
-python TrendyolSemanticAnalysis.py
+python app.py
 ```
-
-### Kullanılan Kütüphaneler
-
-
-[Pandas](https://github.com/pandas-dev/pandas)
-
-[requests](https://github.com/psf/requests)
-
-[Json](https://github.com/dpranke/pyjson5)
-
-[OpenAi](https://github.com/openai/openai-python)
-
-
-
