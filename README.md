@@ -1,5 +1,5 @@
 # Sentiment analysis of reviews of a product on Trendyol.
-<hr>
+
 This project performs sentiment analysis of comments using the OpenAI API by entering the URL of a product on Trendyol and the number of comments the user wants. It pulls the number of comments the user wants and determines whether each comment is positive, negative or neutral. The results are printed to an Excel file.
 
 To use the project, you will first need an OpenAI API key. To get the key, you need to register on the OpenAI website. Afterwards, you can clone the project from GitHub and run it.
