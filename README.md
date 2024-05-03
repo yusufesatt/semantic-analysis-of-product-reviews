@@ -8,15 +8,43 @@ To use the project, you will first need an OpenAI API key. To get the key, you n
 
 ## Installation
 
-```
-# Clone the repository
-git clone https://github.com/Spyzah/semantic-analysis-of-product-reviews.git
+1. Clone the repository:
 
+```bash
+git clone https://github.com/yusufesatt/semantic-analysis-of-product-reviews.git
 cd semantic-analysis-of-product-reviews
+```
 
-# Install dependencies
+2. Create Virtualenv **(Optional)**:
+
+```bash
+python -m venv semantic_env
+
+# Ubuntu & MacOS
+source semantic_env/bin/activate
+
+# Windows
+semantic_env/Scripts/activate
+```
+
+3. Install the required dependencies:
+
+```bash 
 pip install -r requirements.txt
+```
 
-# Run project
+## Usage
+
+The whole process will take place in one line 
+
+```bash
 python app.py
 ```
+
+## Contributing
+
+If you encounter issues or have suggestions for improvements, please report them on the GitHub repository 🚀.
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/yusufesatt/semantic-analysis-of-product-reviews?tab=MIT-1-ov-file).
