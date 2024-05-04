@@ -1,16 +1,17 @@
-from requests import get
 from json import loads
-import openai
-from openpyxl import load_workbook
+
 import pandas as pd
+from openai import OpenAI
+from openpyxl import load_workbook
+from requests import get
 from tqdm import tqdm
 
-openaiKey = input("OpenAI API Key Giriniz: ")
-url = input("URL: ")
-excel_name = input("Excel dosya ismi giriniz: ")
+openaiKey = input("Enter OpenAI API Key: ")
+url = input("Trendyol Product URL: ")
+excel_name = input("Enter Excel file name to save: ")
 
-print('Tüm yorumları çekmek için 0 bas')
-Range = int(input("Kaç yorum çekmek istiyorsun: "))
+print("Enter 0 to withdraw all comments.")
+Range = int(input("How many comments do you want to attract: "))
 
 itemId = url.split("-p-")[-1].split("?")[0]
 
@@ -38,39 +39,45 @@ while True:
 commentList = commentList[:Range] if Range > 0 else commentList
 comments = [a["comment"] for a in commentList]
 
-print(f"Çekilen yorum sayısı: {len(comments)}")
+print(f"Number of comments attracted: {len(comments)}")
 
 # Sentiment Analysis
-openai.api_key = openaiKey
+client = OpenAI(
+    api_key=openaiKey,
+)
 sentiments = []
 
 
 def gpt3_chat(comment, index):
-    response = openai.Completion.create(
-        engine="text-davinci-003",
+    response = client.completions.create(
+        model="gpt-3.5-turbo",
         prompt=f"[{index + 1}/{len(comments)}] Analyze the comments for sentiment, and express the emotion of each "
                f"comment in a single word, starting with a capital letter: 'Positive', 'Negative', or 'Neut"
                f"ral'.\n{comment}\nSentiment Analysis:",
         max_tokens=50,
-        temperature=0.7
+        temperature=0.5,
+        top_p=1.0,
+        frequency_penalty=0.0,
+        presence_penalty=0.0
     )
-
+    print(response)
     sentiment = response.choices[0].text.strip()
     sentiments.append(sentiment)
 
 
-for index, comment in tqdm(comments):
+for index, comment in tqdm(enumerate(comments)):
     gpt3_chat(comment, index)
+
 excel_comp = excel_name + ".xlsx"
 
-df = pd.DataFrame({'Yorumlar': comments, 'Duygu Analizi': sentiments})
+df = pd.DataFrame({'Comments': comments, 'Sentiment Analysis': sentiments})
 with pd.ExcelWriter(excel_comp) as writer:
-    df.to_excel(writer, sheet_name='yorumlar', index=False)
+    df.to_excel(writer, sheet_name='Comments', index=False)
 
 book = load_workbook(excel_comp)
-ws = book['yorumlar']
+ws = book['Comments']
 ws.column_dimensions['A'].width = 100
 ws.column_dimensions['B'].width = 20
 book.save(excel_comp)
 
-print("\nBaşarıyla excel'e aktarıldı")
+print("\nSuccessfully exported to excel!")
